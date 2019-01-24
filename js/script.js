@@ -50,6 +50,15 @@ function formatResult(resultQuote) {
   return result;
 }
 
+function getRandomColor() {
+  var a = getRandomNumber(255);
+  var b = getRandomNumber(255);
+  var c = getRandomNumber(255);
+  var randomColor = 'rgb(' + a + ',' + b + ',' + c + ')';
+//  console.log(randomColor);
+  return randomColor;
+}
+
 /*
   The 'printQuote' function: 
    - calls the 'getRandomQuote' function and assigns it to a variable, aQuote
@@ -60,6 +69,9 @@ function formatResult(resultQuote) {
 function printQuote() {
   var aQuote = getRandomQuote(quotes);
   var stringOfQuoteProperties = formatResult(aQuote);
+  var colorString = getRandomColor();
+  //document.body.style.backgroundColor = "rgb(0, 191, 255)";
+  document.body.style.backgroundColor = colorString;
   document.getElementById('quote-box').innerHTML = stringOfQuoteProperties;
   }
 
